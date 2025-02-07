@@ -23,12 +23,12 @@ public class MainPersona {
 		dni = sc.nextInt();
 		System.out.println("Introduce la edad de la primera persona: ");
 		edad = sc.nextInt();
-		
+
 		// Modificamos el objeto
-		per1 = new Persona(dni,nombre,apellidos,edad);
+		per1 = new Persona(dni, nombre, apellidos, edad);
 
 		sc.nextLine();
-		
+
 		// Pedimos y almacenamos los datos en la persona 1
 		System.out.println("Introduce el nombre de la segunda persona: ");
 		nombre = sc.nextLine();
@@ -40,14 +40,23 @@ public class MainPersona {
 		edad = sc.nextInt();
 
 		// Modificamos el objeto
-		per2 = new Persona(dni,nombre,apellidos,edad);
-		
+		per2 = new Persona(dni, nombre, apellidos, edad);
+
 		// Mostramos resultados
-		System.out.println(per1.nombre + " " + per1.apellidos + " con dni " + per1.dni
-				+ (per1.edad >= 18 ? " es" : " no es") + " mayor de edad");
+		System.out.println(per1.getNombre() + " " + per1.getApellidos() + " con dni " + per1.getDni()
+				+ (per1.esMayorEdad() ? " es" : " no es") + " mayor de edad y" + (per1.esJubilado() ? " es" : " no es")
+				+ " jubilado");
+
+		System.out.println(per2.getNombre() + " " + per2.getApellidos() + " con dni " + per2.getDni()
+				+ (per2.esMayorEdad() ? " es" : " no es") + " mayor de edad y" + (per2.esJubilado() ? " es" : " no es")
+				+ " jubilado");
+
+		// Mostrar información
+		System.out.println(per1);
+		System.out.println(per2);
 		
-		System.out.println(per2.nombre + " " + per2.apellidos + " con dni " + per2.dni
-				+ (per2.edad >= 18 ? " es" : " no es") + " mayor de edad");
+		//Mostrar diferencia de edad
+		System.out.println("La diferencia de edad entre las dos personas es de " + per1.diferenciaEdad(per2) + " años");
 
 		// Cerramos Scanner
 		sc.close();

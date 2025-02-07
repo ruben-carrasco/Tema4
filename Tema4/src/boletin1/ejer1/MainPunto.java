@@ -15,25 +15,36 @@ public class MainPunto {
 		pun3 = new Punto(-3,7);
 		
 		// Mostrar coordenadas
-		System.out.println(pun1.x + " " + pun1.y);
-		System.out.println(pun2.x + " " + pun2.y);
-		System.out.println(pun3.x + " " + pun3.y);
+		System.out.println(pun1);
+		System.out.println(pun2);
+		System.out.println(pun3);
 		
 		// Modificar
-		pun1.x += 1;
-		pun1.y -= 1;
+		pun1.setX(pun1.getX() + 1);
+		pun1.setY(pun1.getY() - 1);
 		
-		pun2.x *= 2;
-		pun2.y %= 2;
+		pun2.setX(pun2.getX() * 2);
+		pun2.setY(pun2.getY() / 1);
 		
-		pun3.x /= 3;
+		pun3.setX(pun3.getX() / 3);
 		
 		System.out.println();
 		
 		// Mostrar coordenadas
-		System.out.println(pun1.x + " " + pun1.y);
-		System.out.println(pun2.x + " " + pun2.y);
-		System.out.println(pun3.x + " " + pun3.y);
+		System.out.println(pun1);
+		System.out.println(pun2);
+		System.out.println(pun3);
+		
+		System.out.println();
+		
+		// Metodo para modificar coordenadas
+		pun1.setXY(1, 0);
+		System.out.println(pun1);
+		// Desplazar coordenadas
+		pun1.desplaza(2, 6);
+		System.out.println(pun1);
+		// Calcular distancia
+		System.out.println(pun1.distancia(pun3));
 	
 	}
 

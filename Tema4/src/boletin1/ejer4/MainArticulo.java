@@ -15,10 +15,10 @@ public class MainArticulo {
 		
 		
 		//Resultados
-		resultado(art1.nombre,art1.precio,art1.IVA);
-		resultado(art2.nombre,art2.precio,art2.IVA);
-		resultado(art3.nombre,art3.precio,art3.IVA);
-		resultado(art4.nombre,art4.precio,art4.IVA);
+		resultado(art1);
+		resultado(art2);
+		resultado(art3);
+		resultado(art4);
 	}
 	
 	/**
@@ -27,15 +27,16 @@ public class MainArticulo {
 	 * @param precio del producto
 	 * @param iva del producto
 	 */
-	public static void resultado(String nombre,int precio, int iva) {
+	public static void resultado(Articulo art) {
 		double pvp;
+		double pvpDescuento;
 		
 		// Calculamos el pvp
-		pvp = ((double) precio * iva / 100) + precio;
+		pvp = art.getPVP();
+		System.out.println("El PVP de " + art + " es: " + pvp);
 				
 		// Mostrar resultado
-		System.out.println(nombre + " - " + "Precio:" + precio + "€" + " - IVA:" + iva + "%" + " - PVP:"
-				+ pvp + "€");
+		System.out.println(art);
 	}
 
 }
