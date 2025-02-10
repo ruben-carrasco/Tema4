@@ -90,9 +90,10 @@ public class Rectangulo {
 		if (y2 > y1)
 			this.y2 = y2;
 	}
-	
+
 	/**
 	 * Establecer coordenadas x1 e y1
+	 * 
 	 * @param x1 Coordenada x1
 	 * @param y1 Coordenada y1
 	 */
@@ -100,9 +101,10 @@ public class Rectangulo {
 		this.x1 = x1;
 		this.y1 = y1;
 	}
-	
+
 	/**
 	 * Establecer coordenadas x2 e y2
+	 * 
 	 * @param x2 Coordenada x2
 	 * @param y2 Coordenada y2
 	 */
@@ -110,33 +112,35 @@ public class Rectangulo {
 		this.x2 = x2;
 		this.y2 = y2;
 	}
-	
+
 	/**
 	 * Establecer todas las coordenadas
+	 * 
 	 * @param x1 Coordenada x1
 	 * @param y1 Coordenada y1
 	 * @param x2 Coordenada x2
 	 * @param y2 Coordenada y2
 	 */
-	public void setAll(int x1, int y1,int x2, int y2) {
+	public void setAll(int x1, int y1, int x2, int y2) {
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
 	}
-	
+
 	/**
 	 * Devuelve el perimetro
+	 * 
 	 * @return Perimetro del rectangulo
 	 */
 	public int getPerimetro() {
 		// Almacena perimetro
 		int perimetro;
 		// Calculo perimetro
-		perimetro = 2 * (Math.abs(x2 - x1) + Math.abs(y2 - y1));	
+		perimetro = 2 * (Math.abs(x2 - x1) + Math.abs(y2 - y1));
 		return perimetro;
 	}
-	
+
 	public int getArea() {
 		// Almacena are
 		int area;
@@ -144,18 +148,17 @@ public class Rectangulo {
 		area = Math.abs(x2 - x1) * Math.abs(y2 - y1);
 		return area;
 	}
-	
+
 	/**
 	 * Devuelve la info del rectangulo
 	 */
 	public String toString() {
 		// Almacena la informacion
 		String info;
-		
+
 		info = "Coordenadas rectangulo: (" + x1 + "," + y1 + ")" + "(" + x2 + "," + y2 + ")";
-		
+
 		return info;
 	}
-	
 
 }

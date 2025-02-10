@@ -24,7 +24,7 @@ public class Articulo {
 		}
 
 		if (cuantosQuedan >= 0) {
-			this.cuantosQuedan = precio;
+			this.cuantosQuedan = cuantosQuedan;
 		}
 
 	}
@@ -83,30 +83,75 @@ public class Articulo {
 		this.cuantosQuedan = cuantosQuedan;
 	}
 
-	// Método getPVP que devuelva el precio de venta al público (PVP) con iva
-	// incluido.
+	/**
+	 * Método getPVP que devuelva el precio de venta al público (PVP) con iva //
+	 * incluido.
+	 * 
+	 * @return Devuelve el pvp cpn iva incluido
+	 */
 	public double getPVP() {
+		// almacena el pvp
 		double pvp;
-		pvp = ((double) precio * IVA / 100) + precio;
+		// Calculamos el pvp y almacenamos
+		pvp = (precio * IVA / 100) + precio;
+		// Devolvemos pvp
 		return pvp;
 	}
 
-	// Método getPVPDescuento que devuelva el PVP con un descuento pasado como
-	// argumento.
+	/**
+	 * Método getPVPDescuento que devuelva el PVP con un descuento pasado como
+	 * argumento.
+	 * 
+	 * @param descuento Descuento introducido como parametro
+	 * @return pvpDescuento Devuelve el precio con descuento aplicado
+	 */
 	public double getPVPDescuento(int descuento) {
+		// Almacena PVP con descuento
+		double pvpDescuento;
+		// Almacena precio descontado
+		double descontado;
+		// Almacena pvp
 		double pvp;
+		// Calcula pvp
 		pvp = ((double) precio * IVA / 100) + precio;
-		pvp
-		return pvp;
+		// Calcula precio a descontar
+		descontado = pvp * descuento / 100;
+		// Calcula el precio con descuento aplicado
+		pvpDescuento = pvp - descontado;
+		return pvpDescuento;
 	}
 
-	// Método vender que actualiza los atributos del objeto tras vender una cantidad
-	// ‘x’ (si esposible). Devolverá true si ha sido posible (false en caso
-	// contrario).
+	/**
+	 * Método vender que actualiza los atributos del objeto tras vender una
+	 * cantidad‘x’ (si esposible). Devolverá true si ha sido posible (false en caso
+	 * 
+	 * @param cantidad
+	 * @return
+	 */
+	public boolean vender(int cantidad) {
+		boolean exito = false;
+		if (cuantosQuedan - cantidad >= 0) {
+			cuantosQuedan -= cantidad;
+			exito = true;
+		}
+		return exito;
+	}
 
 	// Método almacenar que actualiza los atributos del objeto tras almacenar una
 	// cantidad ‘x’.
+	public void almacenar(int cantidad) {
+		cuantosQuedan += cantidad;
+	}
 
-	// Método toString() que devuelva la información del artículo por pantalla.
+	/**
+	 * Método toString() que devuelva la información del artículo por pantalla.
+	 */
+	public String toString() {
+		// Almacena la informacion del articulo
+		String info;
+		// Añadimos la informacion
+		info = "Nombre: " + nombre + " Precio: " + precio + " IVA: " + IVA + "%" + " Stock: " + cuantosQuedan;
+		return info;
+	}
 
 }
