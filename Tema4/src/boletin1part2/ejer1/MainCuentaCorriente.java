@@ -14,7 +14,11 @@ public class MainCuentaCorriente {
 		System.out.println(c1.getSaldo());
 		
 		// Añado saldo 
-		s1.a
+		c1.añadirDinero(20000);
+		System.out.println(c1.getSaldo());
+		
+		//SAber si son iguales
+		System.out.println(c1.equals(c2));
 	}
 
 }
