@@ -69,12 +69,8 @@ public class Alumno {
 	 * Metodo para saber si dos alumnos son iguales, devuelve true en caso de serlo
 	 */
 	public boolean equals(Object obj) {
-		boolean itEquals = false;
 		Alumno alum = (Alumno) obj;
-		if (this.nombre.equals(alum.nombre)) {
-			itEquals = true;
-		}
-		return itEquals;
+		return this.nombre.equals(alum.nombre);
 	}
 	
 

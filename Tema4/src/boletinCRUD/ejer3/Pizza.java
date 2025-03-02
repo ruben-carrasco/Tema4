@@ -1,4 +1,4 @@
-package boletin1part2.ejer4;
+package boletinCRUD.ejer3;
 
 public class Pizza {
 	/**
@@ -41,7 +41,15 @@ public class Pizza {
 	 * Atributo que almacena el estado de la pizza
 	 */
 	private Estado estado = Estado.PEDIDA;
-
+	
+	/**
+	 * Constructor solo con el codigo
+	 * @param codigo
+	 */
+	public Pizza(int codigo) {
+		this.codigo = codigo;
+	}
+	
 	/**
 	 * Constructor con codigo, tamaño y tipo de la pizza
 	 * 

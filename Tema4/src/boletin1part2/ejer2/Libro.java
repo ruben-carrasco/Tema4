@@ -229,12 +229,8 @@ public class Libro {
 	 * coincide en ambos
 	 */
 	public boolean equals(Object obj) {
-		boolean itEquals = false;
 		Libro book = (Libro) obj;
-		if (this.titulo.equals(book.titulo) && this.autor.equals(book.autor)) {
-			itEquals = true;
-		}
-		return itEquals;
+		return this.titulo.equals(book.titulo) && this.autor.equals(book.autor);
 	}
 
 }

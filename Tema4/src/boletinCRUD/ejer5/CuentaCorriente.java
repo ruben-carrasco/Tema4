@@ -1,11 +1,11 @@
-package boletin1part2.ejer1;
+package boletinCRUD.ejer5;
 
 public class CuentaCorriente {
 	/**
 	 * Enumerado que almacena las nacionalidades
 	 */
 	enum Nacionalidad {
-		ESPAÑOLA, EXTRAJERA
+		ESPAÑOLA, EXTRANJERA
 	};
 	/**
 	 * Atributo que almacena el DNI
@@ -41,6 +41,14 @@ public class CuentaCorriente {
 		if (saldo >= 0) {
 			this.saldo = saldo;
 		}
+	}
+	
+	/**
+	 * Constructor solo con el dni
+	 * @param dni Dni de la cuenta
+	 */
+	public CuentaCorriente(String dni) {
+		this.dni = dni;
 	}
 	
 	/**
@@ -86,6 +94,7 @@ public class CuentaCorriente {
 		}
 		
 		// Comprobamos que sea ESPAÑOLA o EXTRANJERA
+		nacionalidad = nacionalidad.toUpperCase();
 		if(nacionalidad.equals("ESPAÑOLA") || nacionalidad.equals("EXTRANJERA")) {
 			this.nacionalidad = Nacionalidad.valueOf(nacionalidad);
 		}
@@ -198,10 +207,11 @@ public class CuentaCorriente {
 	/**
 	 * Metodo equals para saber si dos cuentas son iguales
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		// Creamos un objeto de tipo CuentaCorriente igual al objeto introducido como parametro de entrada
 		CuentaCorriente cuenta = (CuentaCorriente) obj;
-		return dni == cuenta.dni && nombre.equals(cuenta.nombre);
+		return this.dni.equals(cuenta.dni);
 	}
 	
 	

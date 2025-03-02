@@ -169,12 +169,8 @@ public class Articulo {
 	 * Metodo equals para saber si dos articulos son iguales
 	 */
 	public boolean equals(Object obj) {
-		boolean itEquals = false;
 		Articulo art = (Articulo) obj;
-		if (this.nombre.equals(art.nombre)) {
-			itEquals = true;
-		}
-		return itEquals;
+		return this.nombre.equals(art.nombre);
 	}
 
 }
