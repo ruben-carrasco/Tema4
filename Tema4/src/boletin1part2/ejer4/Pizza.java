@@ -50,14 +50,16 @@ public class Pizza {
 	 * @param tipo   Tipo de la pizza
 	 */
 	public Pizza(int codigo, String tamaño, String tipo) {
+		tamaño = tamaño.toUpperCase();
+		tipo = tipo.toUpperCase();
 		if (codigo >= 0) {
 			this.codigo = codigo;
 		}
-		switch (tamaño.toUpperCase()) {
-		case "MEDIANA", "FAMILIAR" -> Tamaño.valueOf(tamaño);
+		switch (tamaño) {
+		case "MEDIANA", "FAMILIAR" -> this.tamaño = Tamaño.valueOf(tamaño);
 		}
 		switch (tipo) {
-		case "MARGARITA", "CUATRO_QUESOS", "FUNGHI" -> tipo.valueOf(tipo);
+		case "MARGARITA", "CUATRO_QUESOS", "FUNGHI" -> this.tipo = Tipo.valueOf(tipo);
 		}
 	}
 

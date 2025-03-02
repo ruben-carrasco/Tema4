@@ -77,6 +77,7 @@ public class Libro {
 	 * @param genero     Genero del libro
 	 */
 	public Libro(String titulo, String autor, int ejemplares, int prestados, String genero) {
+		genero = genero.toUpperCase();
 		if (titulo != null && !titulo.isBlank()) {
 			this.titulo = titulo;
 		}
@@ -89,7 +90,7 @@ public class Libro {
 		if (prestados >= 0) {
 			this.prestados = prestados;
 		}
-		switch (genero.toUpperCase()) {
+		switch (genero) {
 		case "NARRATIVO", "LÍRICO", "DRAMÁTICO", "DIDÁCTICO", "POÉTICO" -> {
 			this.genero = Genero.valueOf(genero);
 		}
@@ -165,7 +166,8 @@ public class Libro {
 	 * @param genero
 	 */
 	public void setGenero(String genero) {
-		switch (genero.toUpperCase()) {
+		genero = genero.toUpperCase();
+		switch (genero) {
 		case "NARRATIVO", "LÍRICO", "DRAMÁTICO", "DIDÁCTICO", "POÉTICO" -> {
 			this.genero = Genero.valueOf(genero);
 		}

@@ -26,7 +26,7 @@ public class AlumnoCRUD {
 		return alumnos.add(a);
 	}
 	
-	public static void Alumno
+	//public static void Alumno
 	
 	// Metodo para eliminar un alumno
 	public static boolean borrarAlumno(Alumno a) {

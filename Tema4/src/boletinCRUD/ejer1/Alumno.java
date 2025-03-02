@@ -10,10 +10,6 @@ public class Alumno {
 	 */
 	private double notaMedia = 0;
 	
-	public Alumno(String nombre) {
-		if ()
-	}
-	
 	/**
 	 * Constructor con el nombre del alumno y su nota media
 	 * @param nombre Nombre del alumno
