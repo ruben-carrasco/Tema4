@@ -205,7 +205,7 @@ public class CuentaCorriente {
 		CuentaCorriente cuenta = (CuentaCorriente) obj;
 		
 		// Si coinciden son iguales
-		if(dni == cuenta.dni && nombre == cuenta.nombre) {
+		if(dni == cuenta.dni && nombre.equals(cuenta.nombre)) {
 			itEquals = true;
 		}
 		

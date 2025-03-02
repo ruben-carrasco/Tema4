@@ -11,6 +11,16 @@ public class Alumno {
 	private double notaMedia = 0;
 	
 	/**
+	 * Constructor solo con el nombre
+	 * @param nombre Nombre del alumno
+	 */
+	public Alumno(String nombre) {
+		if(nombre != null && !nombre.isBlank()) {
+			this.nombre = nombre;
+		}
+	}
+	
+	/**
 	 * Constructor con el nombre del alumno y su nota media
 	 * @param nombre Nombre del alumno
 	 * @param notaMedia Nota media que posee el alumno
@@ -71,7 +81,7 @@ public class Alumno {
 	public boolean equals(Object obj) {
 		boolean itEquals = false;
 		Alumno alum = (Alumno) obj;
-		if (this.nombre == alum.nombre) {
+		if (this.nombre.equals(alum.nombre)) {
 			itEquals = true;
 		}
 		return itEquals;

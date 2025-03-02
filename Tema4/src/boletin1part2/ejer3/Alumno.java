@@ -71,7 +71,7 @@ public class Alumno {
 	public boolean equals(Object obj) {
 		boolean itEquals = false;
 		Alumno alum = (Alumno) obj;
-		if (this.nombre == alum.nombre) {
+		if (this.nombre.equals(alum.nombre)) {
 			itEquals = true;
 		}
 		return itEquals;

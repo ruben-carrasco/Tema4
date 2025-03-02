@@ -231,7 +231,7 @@ public class Libro {
 	public boolean equals(Object obj) {
 		boolean itEquals = false;
 		Libro book = (Libro) obj;
-		if (this.titulo == book.titulo && this.autor == book.autor) {
+		if (this.titulo.equals(book.titulo) && this.autor.equals(book.autor)) {
 			itEquals = true;
 		}
 		return itEquals;
