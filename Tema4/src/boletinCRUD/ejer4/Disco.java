@@ -42,7 +42,9 @@ public class Disco {
 	 * @param codigo Codigo del disco
 	 */
 	public Disco(int codigo) {
-		this.codigo = codigo;
+		if (codigo > 0) {
+			this.codigo = codigo;
+		}
 	}
 
 	/**
